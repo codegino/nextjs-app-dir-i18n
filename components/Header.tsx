@@ -15,13 +15,19 @@ const Header = () => {
       <nav className="flex gap-2 mb-2">
         <Link
           href={`/${locale}`}
-          className={pathName === `/${locale}` ? 'text-blue-700' : ''}
+          className={
+            pathName === `/${locale}` || pathName === '/' ? 'text-blue-700' : ''
+          }
         >
           {t('home')}
         </Link>
         <Link
           href={`/${locale}/about`}
-          className={pathName === `/${locale}/about` ? 'text-blue-700' : ''}
+          className={
+            pathName === `/${locale}/about` || pathName === '/about'
+              ? 'text-blue-700'
+              : ''
+          }
         >
           {t('about')}
         </Link>
