@@ -2,10 +2,13 @@
 import {usePathname, useParams} from 'next/navigation';
 import Link from 'next/link';
 import ChangeLocale from './ChangeLocale';
+import {useTranslation} from '../i18n/client';
+import type {LocaleTypes} from '../i18n/settings';
 
 const Header = () => {
   const pathName = usePathname();
-  const locale = useParams()?.locale;
+  const locale = useParams()?.locale as LocaleTypes;
+  const {t} = useTranslation(locale, 'common');
 
   return (
     <header>
@@ -14,13 +17,13 @@ const Header = () => {
           href={`/${locale}`}
           className={pathName === `/${locale}` ? 'text-blue-700' : ''}
         >
-          Home
+          {t('home')}
         </Link>
         <Link
           href={`/${locale}/about`}
           className={pathName === `/${locale}/about` ? 'text-blue-700' : ''}
         >
-          About
+          {t('about')}
         </Link>
       </nav>
       <ChangeLocale />
