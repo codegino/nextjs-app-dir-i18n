@@ -1,13 +1,13 @@
-import Header from '../components/Header';
 import '../styles/tailwind.css';
 
-const MainLayout = ({children}) => (
-  <html lang="en">
-    <body className="p-2">
-      <Header />
-      {children}
-    </body>
-  </html>
-);
+export const metadata = {
+  title: 'Next.js i18n',
+};
 
-export default MainLayout;
+export default function RootLayout({children}: {children: React.ReactNode}) {
+  return (
+    <html lang="en">
+      <body className="p-3">{children}</body>
+    </html>
+  );
+}
