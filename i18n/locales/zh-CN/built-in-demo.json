@@ -1,0 +1,8 @@
+{
+  "number": "数: {{val, number}}",
+  "currency": "货币: {{val, currency}}",
+  "dateTime": "日期/时间: {{val, datetime}}",
+  "relativeTime": "相对时间: {{val, relativetime}}",
+  "list": "列表: {{val, list}}",
+  "weekdays": ["星期一", "星期二", "星期三", "星期四", "星期五"]
+}
