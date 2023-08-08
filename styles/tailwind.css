@@ -13,3 +13,7 @@ h2 {
 h3 {
   @apply text-xl;
 }
+
+.form-field {
+  @apply border mb-1 p-1 w-full;
+}

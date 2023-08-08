@@ -1,0 +1,12 @@
+{
+  "title": "Stay up to date",
+  "subtitle": "Subscribe to my newsletter",
+  "form": {
+    "firstName": "First name",
+    "email": "E-mail",
+    "action": {
+      "signUp": "Sign Up",
+      "cancel": "Cancel"
+    }
+  }
+}

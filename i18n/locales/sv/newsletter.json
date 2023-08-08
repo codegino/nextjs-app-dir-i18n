@@ -1,0 +1,12 @@
+{
+  "title": "Håll dig uppdaterad",
+  "subtitle": "Prenumerera på mitt nyhetsbrev",
+  "form": {
+    "firstName": "Förnamn",
+    "email": "E-post",
+    "action": {
+      "signUp": "Registrera sig",
+      "cancel": "Annullera"
+    }
+  }
+}
