@@ -1,6 +1,6 @@
 'use client';
 
-import {useEffect, useState} from 'react';
+import {useEffect} from 'react';
 import i18next, {i18n} from 'i18next';
 import {initReactI18next, useTranslation as useTransAlias} from 'react-i18next';
 import resourcesToBackend from 'i18next-resources-to-backend';
@@ -23,7 +23,7 @@ i18next
     ...getOptions(),
     lng: undefined, // detect the language on the client
     detection: {
-      order: ['path', 'htmlTag'],
+      order: ['path'],
     },
     preload: runsOnServerSide ? locales : [],
   });
@@ -44,14 +44,6 @@ export function useTranslation(lng: LocaleTypes, ns: string) {
 }
 
 function useCustomTranslationImplem(i18n: i18n, lng: LocaleTypes) {
-  const [activeLng, setActiveLng] = useState(i18n.resolvedLanguage);
-
-  // This effect updates the active language state variable when the resolved language changes,
-  useEffect(() => {
-    if (activeLng === i18n.resolvedLanguage) return;
-    setActiveLng(i18n.resolvedLanguage);
-  }, [activeLng, i18n.resolvedLanguage]);
-
   // This effect changes the language of the application when the lng prop changes.
   useEffect(() => {
     if (!lng || i18n.resolvedLanguage === lng) return;
