@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { createContext, useContext } from "react";
-import { FALLBACK_LANG, Locales } from "../i18n/settings";
+import {createContext, useContext} from 'react';
+import {FALLBACK_LOCALE, Locales} from '../i18n/settings';
 
-const Context = createContext<Locales>(FALLBACK_LANG);
+const Context = createContext<Locales>(FALLBACK_LOCALE);
 
 export function LocaleProvider({
   children,
@@ -16,9 +16,5 @@ export function LocaleProvider({
 }
 
 export function useLocale() {
-  const context = useContext(Context);
-
-  return context;
+  return useContext(Context);
 }
-
-export default Context;

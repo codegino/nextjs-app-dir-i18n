@@ -3,7 +3,7 @@ import React from 'react';
 import {useTranslation} from '../i18n/client';
 
 const BuiltInFormatsDemo = () => {
-  const {t} = useTranslation('built-in-demo');
+  const {t} = useTranslation('built-in-formats');
 
   return (
     <div>

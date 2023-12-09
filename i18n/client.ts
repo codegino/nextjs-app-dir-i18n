@@ -7,7 +7,7 @@ import resourcesToBackend from 'i18next-resources-to-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import {
   Locales,
-  USER_PREFERRED_LANGUAGE_COOKIE,
+  LANGUAGE_COOKIE,
   getOptions,
   supportedLocales,
 } from './settings';
@@ -29,7 +29,7 @@ i18next
     lng: undefined, // detect the language on the client
     detection: {
       order: ['cookie'],
-      lookupCookie: USER_PREFERRED_LANGUAGE_COOKIE,
+      lookupCookie: LANGUAGE_COOKIE,
       caches: ['cookie'],
     },
     preload: runsOnServerSide ? supportedLocales : [],

@@ -1,8 +1,9 @@
 import React from 'react';
 import {createTranslation} from '../i18n/server';
 
-const SubscribeForm = async ({locale}) => {
-  const {t} = await createTranslation(locale, 'newsletter');
+// pass the locale as a prop
+const SubscribeForm = async () => {
+  const {t} = await createTranslation('newsletter');
 
   return (
     <section className="w-[350px]">
@@ -10,10 +11,20 @@ const SubscribeForm = async ({locale}) => {
       <h4>{t('subtitle')}</h4>
 
       <form className="flex flex-col items-start">
-        <input placeholder={t('form.firstName')} className="form-field" />
-        <input placeholder={t('form.email')} className="form-field" />
-        <button className="form-field">{t('form.action.signUp')}</button>
-        <button className="form-field">{t('form.action.cancel')}</button>
+        <input
+          placeholder={t('form.firstName')}
+          className="border mb-1 p-1 w-full"
+        />
+        <input
+          placeholder={t('form.email')}
+          className="border mb-1 p-1 w-full"
+        />
+        <button className="border mb-1 p-1 w-full">
+          {t('form.action.signUp')}
+        </button>
+        <button className="border mb-1 p-1 w-full">
+          {t('form.action.cancel')}
+        </button>
       </form>
     </section>
   );
